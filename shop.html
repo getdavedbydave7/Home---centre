@@ -3,11 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop – Home Center</title>
+  <title>Shop - Home Center</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .purchase-bar {
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .purchase-bar h3 {
+      margin: 10px 0;
+    }
+    .purchase-bar button {
+      background: #d80027;
+      color: #fff;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-top: 10px;
+      color: #555;
+    }
+    .meta-bar button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-
   <header>
     <h1>Shop at Home Center</h1>
     <nav>
@@ -15,48 +52,45 @@
       <a href="shop.html">Shop</a>
     </nav>
   </header>
-
   <main>
     <div class="product">
-      <img src="https://i.imgur.com/YDEJ69K.jpg" alt="Mini USB Portable Fan">
+      <img src="https://i.imgur.com/YDEJ69K.jpg" alt="Mini USB Portable Fan" width="100%" />
       <h3>Mini USB Portable Fan</h3>
-      <p><del>£14.99</del> <strong style="color: green;">£8.99</strong></p>
-      <p style="font-size: 0.9em; color: gray;">Estimated delivery: 4–6 days</p>
-
-      <form action="https://formsubmit.co/davidvorona46@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Order – Mini USB Fan">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="Full Name" placeholder="Full Name" required><br>
-        <input type="text" name="Address" placeholder="Shipping Address" required><br>
-        <input type="email" name="Email" placeholder="Email Address" required><br>
-        <button type="submit" class="button">Safe Checkout</button>
-      </form>
-
-      <div class="actions">
-        <button class="share" onclick="copyLink()">🔗 Share</button>
-        <button class="like" onclick="increaseLikes()">❤️ <span id="like-count">110</span></button>
+      <p><del>£14.99</del> <strong>£8.99</strong></p>
+      <div class="purchase-bar">
+        <p><strong>Delivery:</strong> 4–6 days</p>
+        <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+          <input type="hidden" name="_subject" value="New Order - Mini USB Fan">
+          <input type="text" name="Full Name" placeholder="Full Name" required><br><br>
+          <input type="text" name="Address" placeholder="Shipping Address" required><br><br>
+          <input type="email" name="Email" placeholder="Email Address" required><br><br>
+          <button type="submit">Secure Checkout</button>
+        </form>
+        <div class="meta-bar">
+          <button id="likeBtn">❤ <span id="likeCount">110</span></button>
+          <button onclick="shareLink()">📣 Share</button>
+        </div>
       </div>
     </div>
   </main>
-
   <footer>
     <p>&copy; 2025 Home Center</p>
   </footer>
-
   <script>
-    function copyLink() {
-      const link = window.location.href;
-      navigator.clipboard.writeText(link).then(() => {
-        alert("Website link copied to clipboard!");
-      }).catch(() => {
+    // Like Button Logic
+    let likeCount = 110;
+    document.getElementById("likeBtn").addEventListener("click", function () {
+      likeCount++;
+      document.getElementById("likeCount").textContent = likeCount;
+    });
+
+    // Share Button Logic
+    function shareLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert("Link copied to clipboard!");
+      }, () => {
         alert("Failed to copy link.");
       });
-    }
-
-    let likes = 110;
-    function increaseLikes() {
-      likes++;
-      document.getElementById("like-count").innerText = likes;
     }
   </script>
 </body>

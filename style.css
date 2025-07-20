@@ -55,3 +55,68 @@ footer {
   width: 100%;
   bottom: 0;
 }
+.product-box {
+  display: inline-block;
+  background: white;
+  padding: 1.5em;
+  margin: 1em;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.purchase-details {
+  margin-top: 1em;
+  text-align: left;
+  font-size: 0.95em;
+}
+
+.purchase-details ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5em 0;
+}
+
+.purchase-details li {
+  margin-bottom: 0.4em;
+}
+
+.buy-btn, .cart-btn {
+  width: 100%;
+  padding: 0.6em;
+  margin: 0.5em 0;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-btn {
+  background-color: #0070f3;
+  color: white;
+}
+
+.cart-btn {
+  background-color: #e2e2e2;
+  color: #333;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5em;
+}
+
+.share, .like {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1em;
+}

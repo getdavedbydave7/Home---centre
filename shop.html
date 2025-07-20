@@ -16,18 +16,37 @@
   </header>
 
   <main>
-   <div class="product">
-    <img src="https://i.imgur.com/YDEJ69K.jpg" alt="Mini USB Portable Fan">
+  <div class="product-box">
+    <img src="https://i.imgur.com/YDEJ69K.jpg" alt="Mini USB Portable Fan" class="product-image">
     <h3>Mini USB Portable Fan</h3>
     <p><s>£14.99</s> <strong style="color:green;">Now £8.99</strong></p>
-    <form action="https://formsubmit.co/davidvorona46@gmail.com" method="POST">
+
+    <div class="purchase-details">
+      <p><strong>Shipping:</strong> £3.23</p>
+      <p><strong>Delivery:</strong> Estimated in 4–6 business days</p>
+      <ul>
+        <li>✅ Fast delivery guaranteed</li>
+        <li>✅ Customer support available</li>
+        <li>✅ Secure checkout with encrypted payment</li>
+      </ul>
+
+      <button class="buy-btn" onclick="document.getElementById('orderForm').style.display='block'">Buy Now</button>
+      <button class="cart-btn">Add to Cart</button>
+
+      <div class="actions">
+        <button class="share">🔗 Share</button>
+        <button class="like">❤️ 110</button>
+      </div>
+    </div>
+
+    <form id="orderForm" action="https://formsubmit.co/davidvorona46@gmail.com" method="POST" style="display:none;">
       <input type="hidden" name="_subject" value="New Order - Mini USB Fan (£8.99)">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="Full Name" placeholder="Full Name" required><br>
       <input type="text" name="Address" placeholder="Shipping Address" required><br>
       <input type="email" name="Email" placeholder="Email Address" required><br>
-      <button type="submit" class="button">Order Now</button>
+      <button type="submit" class="button">Submit Order</button>
     </form>
   </div>
 </main>
